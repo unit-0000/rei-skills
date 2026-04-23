@@ -5,7 +5,7 @@ Agent skills for [Rei Labs](https://reilabs.org).
 ## Install
 
 ```bash
-npx skills add 00unitrei/rei-skills
+npx skills add unit-0000/rei-skills
 ```
 
 ## Skills
