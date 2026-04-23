@@ -7,6 +7,8 @@ description: Install the Rei Labs (reilabs) custom provider into the user's Open
 
 Add a `reilabs` entry under `provider` in the user's OpenCode config so the four Rei Labs coder models are selectable. The provider uses the OpenAI-compatible adapter pointed at `https://coder.reilabs.org/v1`.
 
+This skill supports Linux, macOS, and Windows (including WSL).
+
 ## Canonical provider block
 
 This is the exact block to merge under `provider` in `opencode.json`:
@@ -30,7 +32,10 @@ This is the exact block to merge under `provider` in `opencode.json`:
 ## Procedure
 
 1. **Pick the target config file.**
-   - Default: `~/.config/opencode/opencode.json` (global).
+   - Default global path by platform:
+     - Linux/macOS: `~/.config/opencode/opencode.json`
+     - Windows (native): `%USERPROFILE%\.config\opencode\opencode.json`
+     - Windows (WSL, recommended by OpenCode docs): `~/.config/opencode/opencode.json` inside the WSL distro
    - If a project-local `./opencode.json` exists in the cwd, ask the user which one to edit.
    - If neither exists, create the global file with minimal scaffold: `{ "$schema": "https://opencode.ai/config.json", "provider": {} }`.
 
